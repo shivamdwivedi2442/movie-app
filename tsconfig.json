@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [{ "name": "next" }],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "lib/types.js", "lib/tmdb.js", "lib/mock-data.js", "components/CastStrip.js", "components/Footer.js", "components/GenreList.js", "components/GridSkeleton.js", "components/Hero.js", "components/MovieCard.js", "components/MovieGrid.js", "components/Navbar.js", "components/SearchBar.js", "components/SectionHeader.js", "app/loading.js", "app/layout.js", "app/not-found.js", "app/page.js", "app/robots.js", "app/sitemap.js", "app/genre/[id]/loading.jsx", "app/genre/[id]/page.jsx", "app/genres/page.jsx", "app/movie/[id]/loading.jsx", "app/movie/[id]/page.jsx", "app/search/page.jsx", "app/top-rated/page.jsx", "app/upcoming/page.jsx"],
+  "exclude": ["node_modules"]
+}
