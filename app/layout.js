@@ -17,13 +17,13 @@ const body = Inter({
   display: "swap",
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://reelhouse.example.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cinehub.example.com";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Reel House — Discover films worth your evening",
-    template: "%s | Reel House",
+    default: "CINE HUB — Discover films worth your evening",
+    template: "%s | CINE HUB",
   },
   description:
     "Browse trending, top-rated, and upcoming movies. Search any title, filter by genre, and read full cast and synopsis details — fast, and built for every screen.",
@@ -31,14 +31,14 @@ export const metadata = {
     "movies", "film database", "trending movies", "movie search",
     "top rated movies", "upcoming movies", "movie reviews",
   ],
-  authors: [{ name: "Reel House" }],
-  creator: "Reel House",
-  applicationName: "Reel House",
+  authors: [{ name: "CINE HUB" }],
+  creator: "CINE HUB",
+  applicationName: "CINE HUB",
   formatDetection: { telephone: false },
   openGraph: {
     type: "website",
-    siteName: "Reel House",
-    title: "Reel House — Discover films worth your evening",
+    siteName: "CINE HUB",
+    title: "CINE HUB — Discover films worth your evening",
     description:
       "Browse trending, top-rated, and upcoming movies with a fast, cinematic interface.",
     url: SITE_URL,
@@ -46,7 +46,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Reel House — Discover films worth your evening",
+    title: "CINE HUB — Discover films worth your evening",
     description:
       "Browse trending, top-rated, and upcoming movies with a fast, cinematic interface.",
   },
@@ -77,7 +77,7 @@ export default function RootLayout({ children }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Reel House",
+    name: "CINE HUB",
     url: SITE_URL,
     potentialAction: {
       "@type": "SearchAction",
