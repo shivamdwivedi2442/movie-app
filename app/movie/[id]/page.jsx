@@ -1,4 +1,3 @@
-import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -6,6 +5,8 @@ import { Clock, PlayCircle, Star } from "lucide-react";
 import { getMovieDetail, getTrending, IMG } from "@/lib/tmdb";
 import GenreList from "@/components/GenreList";
 import CastStrip from "@/components/CastStrip";
+import HistoryTracker from "@/components/HistoryTracker";
+import FavoriteButton from "@/components/FavoriteButton";
 
 export async function generateStaticParams() {
   const trending = await getTrending();
@@ -84,9 +85,9 @@ export default async function MovieDetailPage({ params }) {
 
   return (
     <div>
+      <HistoryTracker movie={movie} />
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
@@ -115,9 +116,12 @@ export default async function MovieDetailPage({ params }) {
             {movie.tagline && (
               <p className="mb-2 text-sm italic text-brass-400">&ldquo;{movie.tagline}&rdquo;</p>
             )}
-            <h1 className="text-balance font-display text-4xl tracking-wide text-mist-100 sm:text-5xl">
-              {movie.title} {year && <span className="text-mist-500">({year})</span>}
-            </h1>
+            <div className="flex flex-wrap items-start justify-between gap-4">
+              <h1 className="text-balance font-display text-4xl tracking-wide text-mist-100 sm:text-5xl">
+                {movie.title} {year && <span className="text-mist-500">({year})</span>}
+              </h1>
+              <FavoriteButton movie={movie} size="lg" className="border border-stage-600" />
+            </div>
 
             <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-mist-300">
               <span className="flex items-center gap-1.5 text-brass-400">

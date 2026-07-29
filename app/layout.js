@@ -2,6 +2,7 @@ import { Bebas_Neue, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { AuthProvider } from "@/lib/AuthContext";
 
 const display = Bebas_Neue({
   subsets: ["latin"],
@@ -16,13 +17,13 @@ const body = Inter({
   display: "swap",
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://CINEHUB.example.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://reelhouse.example.com";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "CINE HUB — Discover films worth your evening",
-    template: "%s | CINE HUB",
+    default: "Reel House — Discover films worth your evening",
+    template: "%s | Reel House",
   },
   description:
     "Browse trending, top-rated, and upcoming movies. Search any title, filter by genre, and read full cast and synopsis details — fast, and built for every screen.",
@@ -30,14 +31,14 @@ export const metadata = {
     "movies", "film database", "trending movies", "movie search",
     "top rated movies", "upcoming movies", "movie reviews",
   ],
-  authors: [{ name: "CINE HUB" }],
-  creator: "CINE HUB",
-  applicationName: "CINE HUB",
+  authors: [{ name: "Reel House" }],
+  creator: "Reel House",
+  applicationName: "Reel House",
   formatDetection: { telephone: false },
   openGraph: {
     type: "website",
-    siteName: "CINE HUB",
-    title: "CINE HUB — Discover films worth your evening",
+    siteName: "Reel House",
+    title: "Reel House — Discover films worth your evening",
     description:
       "Browse trending, top-rated, and upcoming movies with a fast, cinematic interface.",
     url: SITE_URL,
@@ -45,7 +46,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CINE HUB — Discover films worth your evening",
+    title: "Reel House — Discover films worth your evening",
     description:
       "Browse trending, top-rated, and upcoming movies with a fast, cinematic interface.",
   },
@@ -72,13 +73,11 @@ export const viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({
-  children,
-}) {
+export default function RootLayout({ children }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "CINE HUB",
+    name: "Reel House",
     url: SITE_URL,
     potentialAction: {
       "@type": "SearchAction",
@@ -92,7 +91,6 @@ export default function RootLayout({
       <body>
         <script
           type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <a
@@ -101,9 +99,11 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <Navbar />
-        <main id="main-content">{children}</main>
-        <Footer />
+        <AuthProvider>
+          <Navbar />
+          <main id="main-content">{children}</main>
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { IMG } from "@/lib/tmdb";
+import FavoriteButton from "./FavoriteButton";
 
 export default function MovieCard({ movie, priority = false, index = 0 }) {
   const poster = IMG.poster(movie.poster_path);
@@ -41,8 +42,9 @@ export default function MovieCard({ movie, priority = false, index = 0 }) {
           <div className="absolute bottom-0 left-0 right-0 translate-y-3 p-3 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
             <p className="line-clamp-2 text-xs text-mist-300">{movie.overview}</p>
           </div>
+          <FavoriteButton movie={movie} className="absolute left-2 top-2" />
           {isTV && (
-            <div className="absolute left-2 top-2 rounded-full bg-stage-950/80 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-velvet-400 backdrop-blur-sm">
+            <div className="absolute bottom-2 left-2 rounded-full bg-stage-950/80 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-velvet-400 backdrop-blur-sm">
               Series
             </div>
           )}
