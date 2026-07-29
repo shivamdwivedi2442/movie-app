@@ -32,7 +32,7 @@ export default function Navbar() {
         >
           <Clapperboard className="h-6 w-6 text-velvet-500" aria-hidden />
           <span>
-            REEL<span className="text-velvet-500">HOUSE</span>
+            CINE<span className="text-velvet-500">HUB</span>
           </span>
         </Link>
 
