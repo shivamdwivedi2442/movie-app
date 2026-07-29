@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { CastMember } from "@/lib/types";
 import { IMG } from "@/lib/tmdb";
 import { User } from "lucide-react";
 

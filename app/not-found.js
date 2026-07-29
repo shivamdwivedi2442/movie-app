@@ -13,7 +13,7 @@ export default function NotFound() {
         href="/"
         className="mt-8 inline-flex items-center gap-2 rounded-full bg-velvet-500 px-6 py-3 text-sm font-semibold text-white hover:bg-velvet-400"
       >
-        Back to Reel House
+        Back to CINE HUB
       </Link>
     </div>
   );

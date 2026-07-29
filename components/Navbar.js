@@ -9,6 +9,7 @@ import SearchBar from "./SearchBar";
 
 const LINKS = [
   { href: "/", label: "Now Trending" },
+  { href: "/indian", label: "Indian Cinema" },
   { href: "/top-rated", label: "Top Rated" },
   { href: "/upcoming", label: "Upcoming" },
   { href: "/genres", label: "Genres" },

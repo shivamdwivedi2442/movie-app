@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { getGenres, getPopular, getTrending } from "@/lib/tmdb";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://reelhouse.example.com";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cinehub.example.com";
 
 export default async function sitemap() {
   const [genres, trending, popular] = await Promise.all([
